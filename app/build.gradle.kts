@@ -1,7 +1,16 @@
 plugins {
     application
     distribution
+    id("org.sonarqube") version "6.0.1.5171"
 //    id("java")
+}
+
+sonar {
+    properties {
+        property("sonar.projectKey", "olikkks_java-project-61")
+        property("sonar.organization", "olikkks")
+        property("sonar.host.url", "https://sonarcloud.io")
+    }
 }
 
 group = "hexlet.code"
