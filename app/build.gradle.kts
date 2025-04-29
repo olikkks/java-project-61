@@ -4,6 +4,7 @@ plugins {
     id("org.sonarqube") version "6.0.1.5171"
 //    id("java")
 }
+
 sonar {
     properties {
         property("sonar.projectKey", "olikkks_java-project-61")
@@ -33,4 +34,3 @@ tasks.getByName("run", JavaExec::class) {
     standardInput = System.`in`
 }
 
-annotation class sonar(val value: Any)
