@@ -1,5 +1,6 @@
 package hexlet.code;
 
+import hexlet.code.games.Calc;
 import hexlet.code.games.Evenness;
 
 import hexlet.code.Engine;
@@ -20,6 +21,10 @@ class App {
                 break;
             case "2":
                 game = new Evenness();
+                Engine.engine(game);
+                break;
+            case "3":
+                game = new Calc();
                 Engine.engine(game);
                 break;
             default:

@@ -4,48 +4,45 @@ import java.util.Random;
 
 public class Evenness implements GameTaskAndCorrectAnswer {
 
-        private String task = "Answer 'yes' if the number is even, otherwise answer 'no'.";
-        private String taskQuestion;
-        private String correctAnswer;
-        public Evenness() {
-            Random random = new Random();
-            int randomNumber = random.nextInt(100);
-            taskQuestion = "Question: " + randomNumber;
+    private String task = "Answer 'yes' if the number is even, otherwise answer 'no'.";
+    private String taskQuestion;
+    private String correctAnswer;
 
-            if (randomNumber % 2 == 0) {
-                correctAnswer = "yes";
-            } else {
-                correctAnswer = "no";
-            }
-        }
+    public Evenness() {
+    IsEven();
+}
 
+    private void IsEven() {
+    Random random = new Random();
+    int randomNumber = random.nextInt(100);
+    taskQuestion = "Question: " + randomNumber;
 
-        @Override
-        public String getTask() {
-            return task;
-        }
+    if (randomNumber % 2 == 0) {
+        correctAnswer = "yes";
+    } else {
+        correctAnswer = "no";
+    }
+}
 
-        @Override
-        public String getCorrectAnswer() {
-            return correctAnswer;
-        }
+    @Override
+    public String getTask() {
+        return task;
+    }
 
-        @Override
-        public void update() {
-            Random random = new Random();
-            int randomNumber = random.nextInt(100);
-            taskQuestion = "Question: " + randomNumber;
+    @Override
+    public String getSelectedTaskQuestion() {
+        return taskQuestion;
+    }
 
-            if (randomNumber % 2 == 0) {
-                correctAnswer = "yes";
-            } else {
-                correctAnswer = "no";
-            }
-        }
+    @Override
+    public String getCorrectAnswer() {
+        return correctAnswer;
+    }
 
-        public String getSelectedTaskQuestion() {
-                return taskQuestion;
-        }
+    @Override
+    public void update() {
+        IsEven();
+    }
 
 }
 
