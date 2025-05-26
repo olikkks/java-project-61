@@ -12,3 +12,5 @@
 [![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=olikkks_java-project-61&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=olikkks_java-project-61)
 
 [![asciicast](https://asciinema.org/a/JjfilBcr9iZtcyAQ2pOu9B594.svg)](https://asciinema.org/a/JjfilBcr9iZtcyAQ2pOu9B594)
+
+[![asciicast](https://asciinema.org/a/QSnVV6TjEj3fte43Fv5Yvikxz.svg)](https://asciinema.org/a/QSnVV6TjEj3fte43Fv5Yvikxz)
