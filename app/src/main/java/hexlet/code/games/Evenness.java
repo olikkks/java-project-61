@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class Evenness implements GameTaskAndCorrectAnswer {
 
-    private String task = "Answer 'yes' if the number is even, otherwise answer 'no'.";
+    private final String task = "Answer 'yes' if the number is even, otherwise answer 'no'.";
     private String taskQuestion;
     private String correctAnswer;
 

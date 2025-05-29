@@ -3,12 +3,13 @@ package hexlet.code;
 import hexlet.code.games.Calc;
 import hexlet.code.games.Evenness;
 import hexlet.code.games.GrstComDivisor;
+import hexlet.code.games.Progression;
 
 import java.util.Scanner;
 
 class App {
     public static void main(String[] args) {
-        System.out.println("Please enter the game number and press Enter. \n1 - Greet \n2 - Even \n3 - Calc \n4 - GCD \n0 - Exit");
+        System.out.println("Please enter the game number and press Enter. \n1 - Greet \n2 - Even \n3 - Calc \n4 - GCD \n5 - Progression \n0 - Exit");
         Scanner gameNumber = new Scanner(System.in);
         String gameNum = gameNumber.nextLine();
         System.out.println("Your choice: " + gameNum);
@@ -28,6 +29,10 @@ class App {
                 break;
             case "4":
                 game = new GrstComDivisor();
+                Engine.engine(game);
+                break;
+            case "5":
+                game = new Progression();
                 Engine.engine(game);
                 break;
             case "0":
