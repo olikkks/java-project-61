@@ -15,10 +15,12 @@ public class GrstComDivisor implements GameTaskAndCorrectAnswer {
     }
 
     private void findGCD() {
+        final int randomNumber1bound = 100;
         Random random1 = new Random();
-        int dividend1 = random1.nextInt(100);
+        int dividend1 = random1.nextInt(randomNumber1bound);
+        final int randomNumber2bound = 100;
         Random random2 = new Random();
-        int dividend2 = random2.nextInt(100);
+        int dividend2 = random2.nextInt(randomNumber2bound);
 
         int a = dividend1;
         int b = dividend2;
@@ -32,9 +34,8 @@ public class GrstComDivisor implements GameTaskAndCorrectAnswer {
                 a = b;
                 b = reminder;
             }
+            gcd = a;
         }
-
-        gcd = a;
 
         taskQuestion = "Question: " + dividend1 + " " + dividend2;
         correctAnswer = "" + gcd;

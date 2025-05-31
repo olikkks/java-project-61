@@ -14,12 +14,15 @@ public class Progression implements GameTaskAndCorrectAnswer {
     }
 
     private void progr() {
+        final int randomNumber1bound = 10;
         Random random1 = new Random();
-        int randomNumber1 = random1.nextInt(10);
+        int randomNumber1 = random1.nextInt(randomNumber1bound);
+        final int randomNumber2bound = 10;
         Random random2 = new Random();
-        int randomStep = random2.nextInt(10);
+        int randomStep = random2.nextInt(randomNumber2bound);
+        final int randomNumber3bound = 5;
         Random random3 = new Random();
-        int randomRowLengthAdd = random3.nextInt(5);
+        int randomRowLengthAdd = random3.nextInt(randomNumber3bound);
         int randomRowLength = 5 + randomRowLengthAdd;
         Random random4 = new Random();
         int skip = random4.nextInt(randomRowLength - 1);
@@ -34,9 +37,9 @@ public class Progression implements GameTaskAndCorrectAnswer {
         String result = rowOfNumbers[skip];
         rowOfNumbers[skip] = "..";
 
-        String example = rowOfNumbers[0];
+        StringBuilder example = new StringBuilder(rowOfNumbers[0]);
         for (var i = 1; i < rowOfNumbers.length; i++) {
-            example = example + " " + rowOfNumbers[i];
+            example.append(" ").append(rowOfNumbers[i]);
         }
 
         taskQuestion = "Question: " + example;

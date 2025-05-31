@@ -11,11 +11,13 @@ public class Evenness implements GameTaskAndCorrectAnswer {
 
     public Evenness() {
         isEven();
+
     }
 
     private void isEven() {
+        final int randomNumberBound = 100;
         Random random = new Random();
-        int randomNumber = random.nextInt(100);
+        int randomNumber = random.nextInt(randomNumberBound);
         taskQuestion = "Question: " + randomNumber;
 
         if (randomNumber % 2 == 0) {

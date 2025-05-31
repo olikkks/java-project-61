@@ -16,12 +16,15 @@ public class Calc implements GameTaskAndCorrectAnswer {
     }
 
     private void calculate() {
+        final int randomNumber1bound = 100;
         Random random1 = new Random();
-        int randomNumber1 = random1.nextInt(100);
+        int randomNumber1 = random1.nextInt(randomNumber1bound);
+        final int randomNumber2bound = 10;
         Random random2 = new Random();
-        int randomNumber2 = random2.nextInt(10);
+        int randomNumber2 = random2.nextInt(randomNumber2bound);
+        final int randomNumber3bound = 3;
         Random random3 = new Random();
-        int randomOperation = random3.nextInt(3);
+        int randomOperation = random3.nextInt(randomNumber3bound);
 
         switch (randomOperation) {
             case 0:

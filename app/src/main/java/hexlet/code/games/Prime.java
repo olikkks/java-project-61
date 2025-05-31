@@ -16,9 +16,11 @@ public class Prime implements GameTaskAndCorrectAnswer {
     }
 
     private void isPrime() {
+        final int randomNumber1bound = 99;
         Random random = new Random();
-        int number = random.nextInt(99);
-        int randomNumber = 1 + number;
+        int number = random.nextInt(randomNumber1bound);
+        final int notZero = 1;
+        int randomNumber = notZero + number;
         taskQuestion = "Question: " + randomNumber;
         double randomNumberRoot = sqrt(randomNumber);
         correctAnswer = "no";
