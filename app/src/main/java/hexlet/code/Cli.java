@@ -7,6 +7,6 @@ public class Cli {
         System.out.println("May I have your name?");
         Scanner s = new Scanner(System.in);
         String name = s.nextLine();
-        System.out.println("Hello, " + name + " !");
+        System.out.println("Hello, " + name + "!");
     }
 }

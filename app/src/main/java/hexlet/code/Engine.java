@@ -8,7 +8,7 @@ public class Engine {
         Scanner s = new Scanner(System.in);
         String name = s.nextLine();
 
-        System.out.println("Hello, " + name + " !");
+        System.out.println("Hello, " + name + "!");
 
         String selectedTask;
         String clientsSolution = "";
