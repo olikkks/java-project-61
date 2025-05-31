@@ -39,7 +39,10 @@ public class Engine {
         if (i == 4) {
             System.out.println("Congratulation, " + name);
         } else {
-            System.out.println("'" + clientsSolution + "'" + " is wrong answer ;(. Correct answer was " + "'" + selectedCorrectAnswer + "'" + "." + "\n" + "Let's try again, " + name + "!");
+            System.out.println("'" + clientsSolution + "'" +
+                    " is wrong answer ;(. Correct answer was " +
+                    "'" + selectedCorrectAnswer + "'" + "." + "\n" + "Let's try again, "
+                    + name + "!");
         }
     }
 }

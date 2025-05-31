@@ -10,10 +10,10 @@ public class Evenness implements GameTaskAndCorrectAnswer {
     private String correctAnswer;
 
     public Evenness() {
-        IsEven();
+        isEven();
     }
 
-    private void IsEven() {
+    private void isEven() {
         Random random = new Random();
         int randomNumber = random.nextInt(100);
         taskQuestion = "Question: " + randomNumber;
@@ -42,7 +42,7 @@ public class Evenness implements GameTaskAndCorrectAnswer {
 
     @Override
     public void update() {
-        IsEven();
+        isEven();
     }
 
 }

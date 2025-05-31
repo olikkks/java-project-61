@@ -12,10 +12,10 @@ public class Calc implements GameTaskAndCorrectAnswer {
     private int result;
 
     public Calc() {
-        Calculate();
+        calculate();
     }
 
-    private void Calculate() {
+    private void calculate() {
         Random random1 = new Random();
         int randomNumber1 = random1.nextInt(100);
         Random random2 = new Random();
@@ -35,6 +35,8 @@ public class Calc implements GameTaskAndCorrectAnswer {
             case 2:
                 operation = "*";
                 result = randomNumber1 * randomNumber2;
+                break;
+            default:
                 break;
         }
 
@@ -61,7 +63,7 @@ public class Calc implements GameTaskAndCorrectAnswer {
 
     @Override
     public void update() {
-        Calculate();
+        calculate();
     }
 
 }
