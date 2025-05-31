@@ -3,7 +3,6 @@ package hexlet.code.games;
 import hexlet.code.GameTaskAndCorrectAnswer;
 
 import java.util.Random;
-import java.util.Arrays;
 
 public class Progression implements GameTaskAndCorrectAnswer {
 
@@ -23,7 +22,7 @@ public class Progression implements GameTaskAndCorrectAnswer {
         int randomRowLengthAdd = random3.nextInt(5);
         int randomRowLength = 5 + randomRowLengthAdd;
         Random random4 = new Random();
-        int skip = random4.nextInt(randomRowLength);
+        int skip = random4.nextInt(randomRowLength - 1);
 
         String[] rowOfNumbers = new String[randomRowLength];
 
@@ -34,7 +33,13 @@ public class Progression implements GameTaskAndCorrectAnswer {
 
         String result = rowOfNumbers[skip];
         rowOfNumbers[skip] = "..";
-        taskQuestion = "Question: " + Arrays.toString(rowOfNumbers);
+
+        String example = rowOfNumbers[0];
+        for (var i = 1; i < rowOfNumbers.length; i++) {
+            example = example + " " + rowOfNumbers[i];
+        }
+
+        taskQuestion = "Question: " + example;
         correctAnswer = result;
     }
 

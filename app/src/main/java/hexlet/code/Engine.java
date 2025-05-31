@@ -26,6 +26,8 @@ public class Engine {
             Scanner clientAnswer = new Scanner(System.in);
             clientsSolution = clientAnswer.nextLine();
 
+            System.out.println("Your answer: " + clientsSolution);
+
             selectedCorrectAnswer = game.getCorrectAnswer();
 
             if (clientsSolution.equals(selectedCorrectAnswer)) {
