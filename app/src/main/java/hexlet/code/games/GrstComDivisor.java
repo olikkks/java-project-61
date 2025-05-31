@@ -26,12 +26,14 @@ public class GrstComDivisor implements GameTaskAndCorrectAnswer {
         int reminder;
         if (b == 0) {
             gcd = a;
-        } else
+        } else {
             while (b != 0) {
                 reminder = a % b;
                 a = b;
                 b = reminder;
             }
+        }
+
         gcd = a;
 
         taskQuestion = "Question: " + dividend1 + " " + dividend2;

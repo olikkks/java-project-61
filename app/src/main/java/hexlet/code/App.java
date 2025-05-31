@@ -1,14 +1,16 @@
 package hexlet.code;
 
+// lint-disable-next-line
+
 import hexlet.code.games.*;
 
 import java.util.Scanner;
 
 class App {
     public static void main(String[] args) {
-        System.out.println("Please enter the game number and press Enter. \n" +
-                "1 - Greet \n2 - Even \n3 - Calc \n4 - GCD \n5 - Progression \n" +
-                "6 - Prim \n0 - Exit");
+        System.out.println("Please enter the game number and press Enter. \n"
+                + "1 - Greet \n2 - Even \n3 - Calc \n4 - GCD \n5 - Progression \n"
+                + "6 - Prim \n0 - Exit");
         Scanner gameNumber = new Scanner(System.in);
         String gameNum = gameNumber.nextLine();
         System.out.println("Your choice: " + gameNum);
