@@ -14,12 +14,14 @@ public class Engine {
         String clientsSolution = "";
         String selectedTaskQuestion;
         String selectedCorrectAnswer = "";
+        final int numOfRepeats = 3;
+        final int endOfRepeats = 4;
 
         selectedTask = game.getTask();
         System.out.println(selectedTask);
 
         int i;
-        for (i = 1; i <= 3; i++) {
+        for (i = 1; i <= numOfRepeats; i++) {
             selectedTaskQuestion = game.getSelectedTaskQuestion();
             System.out.println(selectedTaskQuestion);
 
@@ -38,7 +40,7 @@ public class Engine {
             }
         }
 
-        if (i == 4) {
+        if (i == endOfRepeats) {
             System.out.println("Congratulations, " + name + "!");
         } else {
             System.out.println("'" + clientsSolution + "'"

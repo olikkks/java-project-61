@@ -24,18 +24,18 @@ public class Prime implements GameTaskAndCorrectAnswer {
         taskQuestion = "Question: " + randomNumber;
         double randomNumberRoot = sqrt(randomNumber);
         correctAnswer = "no";
-        //System.out.println(randomNumberRoot);
+        final int smallPrimeNotInAlgorithm = 3;
 
         if (randomNumber < 2) {
             correctAnswer = "no";
         } else if (randomNumber == 2) {
             correctAnswer = "yes";
-        } else if (randomNumber == 3) {
+        } else if (randomNumber == smallPrimeNotInAlgorithm) {
             correctAnswer = "yes";
         } else if (randomNumber % 2 == 0) {
             correctAnswer = "no";
         } else {
-            for (int i = 3; (randomNumberRoot < 3 && i < randomNumber) || (i < randomNumberRoot); i += 2) {
+            for (int i = smallPrimeNotInAlgorithm; (randomNumberRoot < smallPrimeNotInAlgorithm && i < randomNumber) || (i < randomNumberRoot); i += 2) {
                 //System.out.println("i = " + i + " n = " + (randomNumber % i) + " " + correctAnswer);
                 if (randomNumber % i != 0) {
                     correctAnswer = "yes";

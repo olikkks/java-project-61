@@ -23,7 +23,8 @@ public class Progression implements GameTaskAndCorrectAnswer {
         final int randomNumber3bound = 5;
         Random random3 = new Random();
         int randomRowLengthAdd = random3.nextInt(randomNumber3bound);
-        int randomRowLength = 5 + randomRowLengthAdd;
+        final int lowestAmountOfNum = 5;
+        int randomRowLength = lowestAmountOfNum + randomRowLengthAdd;
         Random random4 = new Random();
         int skip = random4.nextInt(randomRowLength - 1);
 
