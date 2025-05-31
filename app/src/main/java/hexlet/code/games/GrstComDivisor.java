@@ -1,10 +1,11 @@
 package hexlet.code.games;
+
 import hexlet.code.GameTaskAndCorrectAnswer;
+
 import java.util.Random;
 
 public class GrstComDivisor implements GameTaskAndCorrectAnswer {
 
-    private final String task = "Find the greatest common divisor of given numbers.";
     private String taskQuestion;
     private String correctAnswer;
 
@@ -38,22 +39,22 @@ public class GrstComDivisor implements GameTaskAndCorrectAnswer {
 
     @Override
     public String getTask() {
-        return task;
+        return "Find the greatest common divisor of given numbers.";
     }
 
     @Override
     public String getSelectedTaskQuestion() {
-            return taskQuestion;
+        return taskQuestion;
     }
 
     @Override
     public String getCorrectAnswer() {
-            return correctAnswer;
+        return correctAnswer;
     }
 
     @Override
     public void update() {
-            FindGCD();
+        FindGCD();
     }
 
 }

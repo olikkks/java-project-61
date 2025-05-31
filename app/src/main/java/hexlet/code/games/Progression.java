@@ -1,20 +1,20 @@
 package hexlet.code.games;
+
 import hexlet.code.GameTaskAndCorrectAnswer;
+
 import java.util.Random;
 import java.util.Arrays;
 
 public class Progression implements GameTaskAndCorrectAnswer {
 
-    private final  String task = "What number is missing in the progression?";
     private String taskQuestion;
     private String correctAnswer;
-    private String result;
 
     public Progression() {
-        Progr();
+        progr();
     }
 
-    private void Progr() {
+    private void progr() {
         Random random1 = new Random();
         int randomNumber1 = random1.nextInt(10);
         Random random2 = new Random();
@@ -27,12 +27,12 @@ public class Progression implements GameTaskAndCorrectAnswer {
 
         String[] rowOfNumbers = new String[randomRowLength];
 
-            for (var i = 0; i < randomRowLength; i++) {
-                int num = randomNumber1 + randomStep * i;
-                rowOfNumbers[i] = "" + num;
-            }
+        for (var i = 0; i < randomRowLength; i++) {
+            int num = randomNumber1 + randomStep * i;
+            rowOfNumbers[i] = "" + num;
+        }
 
-        result = rowOfNumbers[skip];
+        String result = rowOfNumbers[skip];
         rowOfNumbers[skip] = "..";
         taskQuestion = "Question: " + Arrays.toString(rowOfNumbers);
         correctAnswer = result;
@@ -40,7 +40,7 @@ public class Progression implements GameTaskAndCorrectAnswer {
 
     @Override
     public String getTask() {
-        return task;
+        return "What number is missing in the progression?";
     }
 
     @Override
@@ -55,7 +55,7 @@ public class Progression implements GameTaskAndCorrectAnswer {
 
     @Override
     public void update() {
-        Progr();
+        progr();
     }
 
 }
