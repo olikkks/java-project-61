@@ -37,7 +37,7 @@ public class Engine {
         }
 
         if (i == 4) {
-            System.out.println("Congratulation, " + name);
+            System.out.println("Congratulations, " + name + "!");
         } else {
             System.out.println("'" + clientsSolution + "'"
                     + " is wrong answer ;(. Correct answer was "
