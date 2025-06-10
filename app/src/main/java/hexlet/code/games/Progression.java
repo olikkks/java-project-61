@@ -1,32 +1,30 @@
 package hexlet.code.games;
 
-import hexlet.code.GameTaskAndCorrectAnswer;
-
 import java.util.Random;
 
-public class Progression implements GameTaskAndCorrectAnswer {
+public class Progression {
 
     private String taskQuestion;
     private String correctAnswer;
+    Random random = new Random();
 
     public Progression() {
-        progr();
+        this.progr();
     }
 
     private void progr() {
         final int randomNumber1bound = 10;
-        Random random1 = new Random();
-        int randomNumber1 = random1.nextInt(randomNumber1bound);
+        int randomNumber1 = random.nextInt(randomNumber1bound);
+
         final int randomNumber2bound = 10;
-        Random random2 = new Random();
-        int randomStep = random2.nextInt(randomNumber2bound);
+        int randomStep = random.nextInt(randomNumber2bound);
+
         final int randomNumber3bound = 5;
-        Random random3 = new Random();
-        int randomRowLengthAdd = random3.nextInt(randomNumber3bound);
+        int randomRowLengthAdd = random.nextInt(randomNumber3bound);
+
         final int lowestAmountOfNum = 5;
         int randomRowLength = lowestAmountOfNum + randomRowLengthAdd;
-        Random random4 = new Random();
-        int skip = random4.nextInt(randomRowLength - 1);
+        int skip = random.nextInt(randomRowLength - 1);
 
         String[] rowOfNumbers = new String[randomRowLength];
 
@@ -47,24 +45,19 @@ public class Progression implements GameTaskAndCorrectAnswer {
         correctAnswer = result;
     }
 
-    @Override
     public String getTask() {
         return "What number is missing in the progression?";
     }
 
-    @Override
-    public String getSelectedTaskQuestion() {
+    public String getTaskQuestion() {
         return taskQuestion;
     }
 
-    @Override
     public String getCorrectAnswer() {
         return correctAnswer;
     }
 
-    @Override
     public void update() {
-        progr();
+        this.progr();
     }
-
 }

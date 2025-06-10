@@ -1,30 +1,28 @@
 package hexlet.code.games;
 
-import hexlet.code.GameTaskAndCorrectAnswer;
-
 import java.util.Random;
 
-public class Calc implements GameTaskAndCorrectAnswer {
+public class Calc {
 
-    private String taskQuestion;
-    private String correctAnswer;
-    private String operation;
-    private int result;
+    static String taskQuestion;
+    static String correctAnswer;
+    static String operation;
+    static int result;
+    Random random = new Random();
 
     public Calc() {
-        calculate();
+        this.calculate();
     }
 
     private void calculate() {
         final int randomNumber1bound = 100;
-        Random random1 = new Random();
-        int randomNumber1 = random1.nextInt(randomNumber1bound);
+        int randomNumber1 = random.nextInt(randomNumber1bound);
+
         final int randomNumber2bound = 10;
-        Random random2 = new Random();
-        int randomNumber2 = random2.nextInt(randomNumber2bound);
+        int randomNumber2 = random.nextInt(randomNumber2bound);
+
         final int randomNumber3bound = 3;
-        Random random3 = new Random();
-        int randomOperation = random3.nextInt(randomNumber3bound);
+        int randomOperation = random.nextInt(randomNumber3bound);
 
         switch (randomOperation) {
             case 0:
@@ -49,24 +47,20 @@ public class Calc implements GameTaskAndCorrectAnswer {
         correctAnswer = "" + result;
     }
 
-    @Override
     public String getTask() {
         return "What is the result of the expression?";
     }
 
-    @Override
-    public String getSelectedTaskQuestion() {
+    public String getTaskQuestion() {
         return taskQuestion;
     }
 
-    @Override
     public String getCorrectAnswer() {
         return correctAnswer;
     }
 
-    @Override
     public void update() {
-        calculate();
+        this.calculate();
     }
 
 }

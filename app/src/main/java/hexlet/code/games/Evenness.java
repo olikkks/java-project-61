@@ -1,21 +1,19 @@
 package hexlet.code.games;
 
-import hexlet.code.GameTaskAndCorrectAnswer;
-
 import java.util.Random;
 
-public class Evenness implements GameTaskAndCorrectAnswer {
+public class Evenness {
 
-    private String taskQuestion;
-    private String correctAnswer;
+    static String taskQuestion;
+    private static String correctAnswer;
 
     public Evenness() {
-        isEven();
-
+        this.isEven();
     }
 
     private void isEven() {
-        final int randomNumberBound = 100;
+
+        int randomNumberBound = 100;
         Random random = new Random();
         int randomNumber = random.nextInt(randomNumberBound);
         taskQuestion = "Question: " + randomNumber;
@@ -27,24 +25,20 @@ public class Evenness implements GameTaskAndCorrectAnswer {
         }
     }
 
-    @Override
     public String getTask() {
         return "Answer 'yes' if the number is even, otherwise answer 'no'.";
     }
 
-    @Override
-    public String getSelectedTaskQuestion() {
+    public String getTaskQuestion() {
         return taskQuestion;
     }
 
-    @Override
     public String getCorrectAnswer() {
         return correctAnswer;
     }
 
-    @Override
     public void update() {
-        isEven();
+        this.isEven();
     }
 
 }
