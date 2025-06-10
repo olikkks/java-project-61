@@ -3,6 +3,7 @@ package hexlet.code;
 import java.util.Scanner;
 import java.util.logging.Logger;
 
+import static hexlet.code.Cli.client;
 import static hexlet.code.Engine.engine;
 
 public class App {
@@ -28,6 +29,7 @@ public class App {
         logger.info("Welcome to the Brain Games! \nMay I have your name?");
         Scanner s = new Scanner(System.in);
         String name = s.nextLine();
+        client(name);
         engine(gameNum, name);
     }
 }
