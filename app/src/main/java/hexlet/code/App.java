@@ -24,7 +24,7 @@ public class App {
         Scanner gameNumber = new Scanner(System.in);
         String gameNum = gameNumber.nextLine();
 
-        logger.info("Your choice: " + gameNum);
+        logger.info("Your choice: %s".formatted(gameNum));
 
         logger.info("Welcome to the Brain Games! \nMay I have your name?");
         Scanner s = new Scanner(System.in);
