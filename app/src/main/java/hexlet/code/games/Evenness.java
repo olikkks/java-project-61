@@ -3,7 +3,7 @@ package hexlet.code.games;
 import java.util.Random;
 
 public class Evenness {
-
+    private final Random random = new Random();
     static String taskQuestion;
     private static String correctAnswer;
 
@@ -14,7 +14,6 @@ public class Evenness {
     private void isEven() {
 
         int randomNumberBound = 100;
-        Random random = new Random();
         int randomNumber = random.nextInt(randomNumberBound);
         taskQuestion = "Question: " + randomNumber;
 
