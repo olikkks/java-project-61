@@ -34,8 +34,9 @@ public class Engine {
                 break;
             }
         }
-        if (i == taskQuestionAnswer.length)
+        if (i == taskQuestionAnswer.length) {
             logger.info("Congratulations, " + name + "!");
+        }
     }
 }
 

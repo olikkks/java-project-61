@@ -3,7 +3,11 @@ package hexlet.code;
 import java.util.Scanner;
 import java.util.logging.Logger;
 
-import hexlet.code.games.*;
+import hexlet.code.games.Calc;
+import hexlet.code.games.Evenness;
+import hexlet.code.games.GreatestComDivisor;
+import hexlet.code.games.Prime;
+import hexlet.code.games.Progression;
 
 public class App {
 
