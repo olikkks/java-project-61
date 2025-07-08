@@ -1,63 +1,51 @@
 package hexlet.code.games;
 
+import hexlet.code.Engine;
+
 import java.util.Random;
 
 public class Progression {
+    static private final Random random = new Random();
+    static final String task = "What number is missing in the progression?";
+    static String[][] taskQuestionAnswer = new String[3][2];
+    static String taskAnswer;
+    static String taskQuestion;
+    static int randomNumber1;
+    static int randomStep;
+    static int randomRowLengthAdd;
+    static final int lowestAmountOfNum = 5;
+    static int randomRowLength;
+    static int skipPlace;
 
-    private String taskQuestion;
-    private String correctAnswer;
-    Random random = new Random();
+    public static void progression() {
 
-    public Progression() {
-        this.progr();
-    }
+        for (var i = 0; i < taskQuestionAnswer.length; i++) {
 
-    private void progr() {
-        final int randomNumber1bound = 10;
-        int randomNumber1 = random.nextInt(randomNumber1bound);
+            randomNumber1 = random.nextInt(10);
+            randomStep = random.nextInt(10);
+            randomRowLengthAdd = random.nextInt(3);
+            randomRowLength = lowestAmountOfNum + randomRowLengthAdd;
+            skipPlace = random.nextInt(randomRowLength - 1);
 
-        final int randomNumber2bound = 10;
-        int randomStep = random.nextInt(randomNumber2bound);
+            String[] rowOfNumbers = new String[randomRowLength];
+            for (var j = 0; j < randomRowLength; j++) {
+                int num = randomNumber1 + randomStep * j;
+                rowOfNumbers[j] = String.valueOf(num);
+            }
 
-        final int randomNumber3bound = 5;
-        int randomRowLengthAdd = random.nextInt(randomNumber3bound);
+            taskAnswer = rowOfNumbers[skipPlace];
 
-        final int lowestAmountOfNum = 5;
-        int randomRowLength = lowestAmountOfNum + randomRowLengthAdd;
-        int skip = random.nextInt(randomRowLength - 1);
+            rowOfNumbers[skipPlace] = "..";
 
-        String[] rowOfNumbers = new String[randomRowLength];
+            StringBuilder example = new StringBuilder(rowOfNumbers[0]);
+            for (var k = 1; k < rowOfNumbers.length; k++) {
+                example.append(" ").append(rowOfNumbers[k]);
+            }
+            taskQuestion = "Question: " + example;
 
-        for (var i = 0; i < randomRowLength; i++) {
-            int num = randomNumber1 + randomStep * i;
-            rowOfNumbers[i] = "" + num;
+            taskQuestionAnswer[i][0] = taskQuestion;
+            taskQuestionAnswer[i][1] = taskAnswer;
         }
-
-        String result = rowOfNumbers[skip];
-        rowOfNumbers[skip] = "..";
-
-        StringBuilder example = new StringBuilder(rowOfNumbers[0]);
-        for (var i = 1; i < rowOfNumbers.length; i++) {
-            example.append(" ").append(rowOfNumbers[i]);
-        }
-
-        taskQuestion = "Question: " + example;
-        correctAnswer = result;
-    }
-
-    public String getTask() {
-        return "What number is missing in the progression?";
-    }
-
-    public String getTaskQuestion() {
-        return taskQuestion;
-    }
-
-    public String getCorrectAnswer() {
-        return correctAnswer;
-    }
-
-    public void update() {
-        this.progr();
+        Engine.engine(task, taskQuestionAnswer);
     }
 }

@@ -1,30 +1,15 @@
 package hexlet.code;
 
+import java.util.Scanner;
 import java.util.logging.Logger;
 
 public class Cli {
-    //private static final Logger logger = Logger.getLogger(Cli.class.getName());
 
-    public static void client(String name) {
+    public static void client() {
         Logger logger = Logger.getLogger(Cli.class.getName());
-//        logger.setUseParentHandlers(false);
-//        ConsoleHandler handler = new ConsoleHandler();
-//        handler.setFormatter(new Formatter() {
-//            @Override
-//            public String format(LogRecord record) {
-//                return record.getMessage() + System.lineSeparator();
-//            }
-//        });
-//        logger.addHandler(handler);
-
-        //logger.info("May I have your name?");
-
-        //System.out.println("May I have your name?");
-        //Scanner s = new Scanner(System.in);
-        //String name = s.nextLine();
-        //System.out.println("Hello, " + name + "!");
-
-
+        logger.info("Welcome to the Brain Games! \nMay I have your name?");
+        Scanner s = new Scanner(System.in);
+        String name = s.nextLine();
         logger.info("Hello, " + name + "!");
     }
 }

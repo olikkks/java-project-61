@@ -1,64 +1,54 @@
 package hexlet.code.games;
 
+import hexlet.code.Engine;
+
 import java.util.Random;
 
 import static java.lang.Math.sqrt;
 
 public class Prime {
 
-    private String taskQuestion;
-    private String correctAnswer;
-    Random random = new Random();
+    static private final Random random = new Random();
+    static final String task = "Answer 'yes' if the number is even, otherwise answer 'no'.";
+    static String[][] taskQuestionAnswer = new String[3][2];
+    static String taskAnswer;
+    static String taskQuestion;
+    static final int notZero = 1;
+    static int number;
+    static int randomNumber;
+    static final int smallPrimeNotInAlgorithm = 3;
 
-    public Prime() {
-        this.isPrime();
-    }
+    public static void prime() {
+        for (var i = 0; i < taskQuestionAnswer.length; i++) {
+            number = random.nextInt(99);
+            randomNumber = notZero + number;
 
-    private void isPrime() {
-        final int randomNumberBound = 99;
-        int number = random.nextInt(randomNumberBound);
-        final int notZero = 1;
-        int randomNumber = notZero + number;
+            taskQuestion = "Question: " + randomNumber;
+            double randomNumberRoot = sqrt(randomNumber);
+            taskAnswer = "no";
 
-        taskQuestion = "Question: " + randomNumber;
-        double randomNumberRoot = sqrt(randomNumber);
-        correctAnswer = "no";
-        final int smallPrimeNotInAlgorithm = 3;
-
-        if (randomNumber < 2) {
-            correctAnswer = "no";
-        } else if (randomNumber == 2) {
-            correctAnswer = "yes";
-        } else if (randomNumber == smallPrimeNotInAlgorithm) {
-            correctAnswer = "yes";
-        } else if (randomNumber % 2 == 0) {
-            correctAnswer = "no";
-        } else {
-            for (int i = smallPrimeNotInAlgorithm; (randomNumberRoot < smallPrimeNotInAlgorithm
-                    && i < randomNumber) || (i <= randomNumberRoot); i += 2) {
-                if (randomNumber % i != 0) {
-                    correctAnswer = "yes";
-                } else {
-                    correctAnswer = "no";
-                    break;
+            if (randomNumber < 2) {
+                taskAnswer = "no";
+            } else if (randomNumber == 2) {
+                taskAnswer = "yes";
+            } else if (randomNumber == smallPrimeNotInAlgorithm) {
+                taskAnswer = "yes";
+            } else if (randomNumber % 2 == 0) {
+                taskAnswer = "no";
+            } else {
+                for (var j = smallPrimeNotInAlgorithm; (randomNumberRoot < smallPrimeNotInAlgorithm
+                        && j < randomNumber) || (j <= randomNumberRoot); j += 2) {
+                    if (randomNumber % j != 0) {
+                        taskAnswer = "yes";
+                    } else {
+                        taskAnswer = "no";
+                        break;
+                    }
                 }
             }
+            taskQuestionAnswer[i][0] = taskQuestion;
+            taskQuestionAnswer[i][1] = taskAnswer;
         }
-    }
-
-    public String getTask() {
-        return "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
-    }
-
-    public String getTaskQuestion() {
-        return taskQuestion;
-    }
-
-    public String getCorrectAnswer() {
-        return correctAnswer;
-    }
-
-    public void update() {
-        this.isPrime();
+        Engine.engine(task, taskQuestionAnswer);
     }
 }
