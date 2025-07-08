@@ -5,8 +5,8 @@ import hexlet.code.Engine;
 import java.util.Random;
 
 public class GreatestComDivisor {
-    static private final Random random = new Random();
-    static final String task = "Find the greatest common divisor of given numbers.";
+    static Random random = new Random();
+    static String task = "Find the greatest common divisor of given numbers.";
     static String[][] taskQuestionAnswer = new String[3][2];
     static String taskAnswer;
     static String taskQuestion;

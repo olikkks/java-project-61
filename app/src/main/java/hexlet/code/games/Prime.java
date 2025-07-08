@@ -8,15 +8,15 @@ import static java.lang.Math.sqrt;
 
 public class Prime {
 
-    static private final Random random = new Random();
-    static final String task = "Answer 'yes' if the number is even, otherwise answer 'no'.";
+    static Random random = new Random();
+    static String task = "Answer 'yes' if the number is even, otherwise answer 'no'.";
     static String[][] taskQuestionAnswer = new String[3][2];
     static String taskAnswer;
     static String taskQuestion;
-    static final int notZero = 1;
+    static int notZero = 1;
     static int number;
     static int randomNumber;
-    static final int smallPrimeNotInAlgorithm = 3;
+    static int smallPrimeNotInAlgorithm = 3;
 
     public static void prime() {
         for (var i = 0; i < taskQuestionAnswer.length; i++) {

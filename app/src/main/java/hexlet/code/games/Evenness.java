@@ -5,8 +5,8 @@ import hexlet.code.Engine;
 import java.util.Random;
 
 public class Evenness {
-    static private final Random random = new Random();
-    static final String task = "Answer 'yes' if the number is even, otherwise answer 'no'.";
+    static Random random = new Random();
+    static String task = "Answer 'yes' if the number is even, otherwise answer 'no'.";
     static String[][] taskQuestionAnswer = new String[3][2];
     static String taskAnswer;
     static String taskQuestion;

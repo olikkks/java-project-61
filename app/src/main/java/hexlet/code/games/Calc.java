@@ -6,8 +6,8 @@ import java.util.Random;
 
 public class Calc {
 
-    static private final Random random = new Random();
-    static final String task = "What is the result of the expression?";
+    static Random random = new Random();
+    static String task = "What is the result of the expression?";
     static String[][] taskQuestionAnswer = new String[3][2];
     static String taskAnswer;
     static String taskQuestion;

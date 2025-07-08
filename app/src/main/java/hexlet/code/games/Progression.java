@@ -5,15 +5,15 @@ import hexlet.code.Engine;
 import java.util.Random;
 
 public class Progression {
-    static private final Random random = new Random();
-    static final String task = "What number is missing in the progression?";
+    static Random random = new Random();
+    static String task = "What number is missing in the progression?";
     static String[][] taskQuestionAnswer = new String[3][2];
     static String taskAnswer;
     static String taskQuestion;
     static int randomNumber1;
     static int randomStep;
     static int randomRowLengthAdd;
-    static final int lowestAmountOfNum = 5;
+    static int lowestAmountOfNum = 5;
     static int randomRowLength;
     static int skipPlace;
 
