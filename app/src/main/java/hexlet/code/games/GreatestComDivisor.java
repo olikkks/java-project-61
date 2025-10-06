@@ -6,7 +6,7 @@ import static hexlet.code.Randoms.generateRandomNumber;
 
 public class GreatestComDivisor {
     //    static Random random = new Random();
-    private final static String task = "Find the greatest common divisor of given numbers.";
+    private final static String TASK = "Find the greatest common divisor of given numbers.";
 
 
     public static void greatestComDivisor() {
@@ -27,7 +27,7 @@ public class GreatestComDivisor {
             taskQuestionAnswer[i][0] = taskQuestion;
             taskQuestionAnswer[i][1] = taskAnswer;
         }
-        Engine.engine(task, taskQuestionAnswer);
+        Engine.engine(TASK, taskQuestionAnswer);
     }
 
     public static int findGreatestComDivisor(int numberOne, int numberTwo) {
