@@ -6,7 +6,7 @@ import static hexlet.code.Randoms.generateRandomNumber;
 
 public class Calc {
 
-    private final static String TASK = "What is the result of the expression?";
+    private final static String task = "What is the result of the expression?";
     private final static String[] operations = {"+", "-", "*"};
 
     public static void calculate() {
@@ -26,7 +26,7 @@ public class Calc {
             taskQuestionAnswer[i][0] = taskQuestion;
             taskQuestionAnswer[i][1] = taskAnswer;
         }
-        Engine.engine(TASK, taskQuestionAnswer);
+        Engine.engine(task, taskQuestionAnswer);
     }
 
     public static String findCalc(int randomNumber1, int randomNumber2, int randomOperation) {

@@ -5,7 +5,7 @@ import hexlet.code.Engine;
 import static hexlet.code.Randoms.generateRandomNumber;
 
 public class Progression {
-    private final static String TASK = "What number is missing in the progression?";
+    private final static String task = "What number is missing in the progression?";
 
     public static void progression() {
 
@@ -36,7 +36,7 @@ public class Progression {
             taskQuestionAnswer[i][0] = taskQuestion;
             taskQuestionAnswer[i][1] = taskAnswer;
         }
-        Engine.engine(TASK, taskQuestionAnswer);
+        Engine.engine(task, taskQuestionAnswer);
     }
 
     public static String[] findRowOfNumbers(int randomNumber1,
