@@ -4,6 +4,8 @@ import java.util.Scanner;
 import java.util.logging.Logger;
 
 public class Engine {
+    public static final int ROUNDS = 3;
+
     public static void engine(String task, String[][] taskQuestionAnswer) {
 
         String clientsSolution;
@@ -18,7 +20,7 @@ public class Engine {
         logger.info("Hello, " + name + "!");
         logger.info(task);
         for (i = 0; i < taskQuestionAnswer.length; i++) {
-            selectedTaskQuestion = taskQuestionAnswer[i][0];
+            selectedTaskQuestion = "Question: " + taskQuestionAnswer[i][0];
             logger.info(selectedTaskQuestion);
             Scanner clientAnswer = new Scanner(System.in);
             clientsSolution = clientAnswer.nextLine();

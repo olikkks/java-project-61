@@ -2,53 +2,55 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 
-import java.util.Random;
+import static hexlet.code.Randoms.generateRandomNumber;
 
 import static java.lang.Math.sqrt;
 
 public class Prime {
 
-    static Random random = new Random();
-    static String task = "Answer 'yes' if the number is even, otherwise answer 'no'.";
-    static String[][] taskQuestionAnswer = new String[3][2];
-    static String taskAnswer;
-    static String taskQuestion;
-    static int notZero = 1;
-    static int number;
-    static int randomNumber;
-    static int smallPrimeNotInAlgorithm = 3;
+    private final static String task = "Answer 'yes' if the number is prime, otherwise answer 'no'.";
 
     public static void prime() {
-        for (var i = 0; i < taskQuestionAnswer.length; i++) {
-            number = random.nextInt(99);
-            randomNumber = notZero + number;
 
-            taskQuestion = "Question: " + randomNumber;
-            double randomNumberRoot = sqrt(randomNumber);
-            taskAnswer = "no";
+        String[][] taskQuestionAnswer = new String[Engine.ROUNDS][2];
+        String taskAnswer;
+        String taskQuestion;
+        int randomNumber;
 
-            if (randomNumber < 2) {
-                taskAnswer = "no";
-            } else if (randomNumber == 2) {
-                taskAnswer = "yes";
-            } else if (randomNumber == smallPrimeNotInAlgorithm) {
-                taskAnswer = "yes";
-            } else if (randomNumber % 2 == 0) {
-                taskAnswer = "no";
-            } else {
-                for (var j = smallPrimeNotInAlgorithm; (randomNumberRoot < smallPrimeNotInAlgorithm
-                        && j < randomNumber) || (j <= randomNumberRoot); j += 2) {
-                    if (randomNumber % j != 0) {
-                        taskAnswer = "yes";
-                    } else {
-                        taskAnswer = "no";
-                        break;
-                    }
-                }
-            }
+        for (var i = 0; i < Engine.ROUNDS; i++) {
+            randomNumber = generateRandomNumber(1, 99);
+            taskQuestion = String.valueOf(randomNumber);
+            taskAnswer = findPrime(randomNumber);
+
             taskQuestionAnswer[i][0] = taskQuestion;
             taskQuestionAnswer[i][1] = taskAnswer;
         }
         Engine.engine(task, taskQuestionAnswer);
+    }
+
+    public static String findPrime(int randomNumber) {
+        double randomNumberRoot = sqrt(randomNumber);
+        int smallPrimeNotInAlgorithm = 3;
+        String findTaskAnswer = "";
+        if (randomNumber < 2) {
+            findTaskAnswer = "no";
+        } else if (randomNumber == 2) {
+            findTaskAnswer = "yes";
+        } else if (randomNumber == smallPrimeNotInAlgorithm) {
+            findTaskAnswer = "yes";
+        } else if (randomNumber % 2 == 0) {
+            findTaskAnswer = "no";
+        } else {
+            for (var j = smallPrimeNotInAlgorithm; (randomNumberRoot < smallPrimeNotInAlgorithm
+                    && j < randomNumber) || (j <= randomNumberRoot); j += 2) {
+                if (randomNumber % j != 0) {
+                    findTaskAnswer = "yes";
+                } else {
+                    findTaskAnswer = "no";
+                    break;
+                }
+            }
+        }
+        return findTaskAnswer;
     }
 }

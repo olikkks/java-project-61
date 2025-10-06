@@ -2,44 +2,48 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 
-import java.util.Random;
+import static hexlet.code.Randoms.generateRandomNumber;
 
 public class Calc {
 
-    static Random random = new Random();
-    static String task = "What is the result of the expression?";
-    static String[][] taskQuestionAnswer = new String[3][2];
-    static String taskAnswer;
-    static String taskQuestion;
-    static String operation = "";
+    private final static String task = "What is the result of the expression?";
+    private final static String[] operations = {"+", "-", "*"};
 
     public static void calculate() {
-        for (var i = 0; i < taskQuestionAnswer.length; i++) {
-            int randomNumber1 = random.nextInt(100);
-            int randomNumber2 = random.nextInt(10);
-            int randomOperation = random.nextInt(3);
 
-            switch (randomOperation) {
-                case 0:
-                    operation = "+";
-                    taskAnswer = String.valueOf(randomNumber1 + randomNumber2);
-                    break;
-                case 1:
-                    operation = "-";
-                    taskAnswer = String.valueOf(randomNumber1 - randomNumber2);
-                    break;
-                case 2:
-                    operation = "*";
-                    taskAnswer = String.valueOf(randomNumber1 * randomNumber2);
-                    break;
-                default:
-                    break;
-            }
-            taskQuestion = "Question: " + randomNumber1 + " " + operation + " " + randomNumber2;
+        String[][] taskQuestionAnswer = new String[Engine.ROUNDS][2];
+        String taskAnswer;
+        String taskQuestion;
+
+        for (var i = 0; i < Engine.ROUNDS; i++) {
+            int randomNumber1 = generateRandomNumber(1, 100);
+            int randomNumber2 = generateRandomNumber(1, 10);
+            int randomOperation = generateRandomNumber(0, 2);
+
+            taskQuestion = randomNumber1 + " " + operations[randomOperation] + " " + randomNumber2;
+            taskAnswer = findCalc(randomNumber1, randomNumber2, randomOperation);
 
             taskQuestionAnswer[i][0] = taskQuestion;
             taskQuestionAnswer[i][1] = taskAnswer;
         }
         Engine.engine(task, taskQuestionAnswer);
+    }
+
+    public static String findCalc(int randomNumber1, int randomNumber2, int randomOperation) {
+        String findTaskAnswer = "";
+        switch (randomOperation) {
+            case 0:
+                findTaskAnswer = String.valueOf(randomNumber1 + randomNumber2);
+                break;
+            case 1:
+                findTaskAnswer = String.valueOf(randomNumber1 - randomNumber2);
+                break;
+            case 2:
+                findTaskAnswer = String.valueOf(randomNumber1 * randomNumber2);
+                break;
+            default:
+                break;
+        }
+        return findTaskAnswer;
     }
 }
