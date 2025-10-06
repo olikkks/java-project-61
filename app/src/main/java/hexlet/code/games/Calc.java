@@ -6,8 +6,8 @@ import static hexlet.code.Randoms.generateRandomNumber;
 
 public class Calc {
 
-    private final static String task = "What is the result of the expression?";
-    private final static String[] operations = {"+", "-", "*"};
+    private final static String TASK = "What is the result of the expression?";
+    private final static String[] OPERATIONS = {"+", "-", "*"};
 
     public static void calculate() {
 
@@ -20,13 +20,13 @@ public class Calc {
             int randomNumber2 = generateRandomNumber(1, 10);
             int randomOperation = generateRandomNumber(0, 2);
 
-            taskQuestion = randomNumber1 + " " + operations[randomOperation] + " " + randomNumber2;
+            taskQuestion = randomNumber1 + " " + OPERATIONS[randomOperation] + " " + randomNumber2;
             taskAnswer = findCalc(randomNumber1, randomNumber2, randomOperation);
 
             taskQuestionAnswer[i][0] = taskQuestion;
             taskQuestionAnswer[i][1] = taskAnswer;
         }
-        Engine.engine(task, taskQuestionAnswer);
+        Engine.engine(TASK, taskQuestionAnswer);
     }
 
     public static String findCalc(int randomNumber1, int randomNumber2, int randomOperation) {

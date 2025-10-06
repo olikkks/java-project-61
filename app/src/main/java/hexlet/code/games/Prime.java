@@ -8,7 +8,7 @@ import static java.lang.Math.sqrt;
 
 public class Prime {
 
-    private final static String task = "Answer 'yes' if the number is prime, otherwise answer 'no'.";
+    private final static String TASK = "Answer 'yes' if the number is prime, otherwise answer 'no'.";
 
     public static void prime() {
 
@@ -25,7 +25,7 @@ public class Prime {
             taskQuestionAnswer[i][0] = taskQuestion;
             taskQuestionAnswer[i][1] = taskAnswer;
         }
-        Engine.engine(task, taskQuestionAnswer);
+        Engine.engine(TASK, taskQuestionAnswer);
     }
 
     public static String findPrime(int randomNumber) {

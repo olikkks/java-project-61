@@ -6,7 +6,7 @@ import static hexlet.code.Randoms.generateRandomNumber;
 
 public class Evenness {
 
-    private final static String task = "Answer 'yes' if the number is even, otherwise answer 'no'.";
+    private final static String TASK = "Answer 'yes' if the number is even, otherwise answer 'no'.";
 
 
     public static void evenness() {
@@ -22,7 +22,7 @@ public class Evenness {
             taskQuestionAnswer[i][0] = taskQuestion;
             taskQuestionAnswer[i][1] = taskAnswer;
         }
-        Engine.engine(task, taskQuestionAnswer);
+        Engine.engine(TASK, taskQuestionAnswer);
     }
 
     public static String findEvenness(int taskNumber) {
