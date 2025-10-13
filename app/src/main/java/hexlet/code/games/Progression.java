@@ -5,7 +5,7 @@ import hexlet.code.Engine;
 import static hexlet.code.Randoms.generateRandomNumber;
 
 public class Progression {
-    private final static String TASK = "What number is missing in the progression?";
+    private static final String TASK = "What number is missing in the progression?";
 
     public static void progression() {
 
@@ -14,24 +14,25 @@ public class Progression {
         String taskQuestion;
         int randomNumber1;
         int randomStep;
-        int randomRowLength;
-        int skipPlace;
+        int randomProgressionLength;
+        int hiddenMemberIndex;
 
         for (var i = 0; i < Engine.ROUNDS; i++) {
 
             randomNumber1 = generateRandomNumber(1, 10);
             randomStep = generateRandomNumber(1, 10);
-            randomRowLength = generateRandomNumber(5, 10);
-            skipPlace = generateRandomNumber(1, randomRowLength - 1);
+            randomProgressionLength = generateRandomNumber(5, 10);
+            hiddenMemberIndex = generateRandomNumber(1, randomProgressionLength - 1);
 
-            String[] rowOfNumbers = findRowOfNumbers(randomNumber1, randomStep, randomRowLength);
-            taskAnswer = rowOfNumbers[skipPlace];
-            rowOfNumbers[skipPlace] = "..";
-            StringBuilder example = new StringBuilder(rowOfNumbers[0]);
-            for (var k = 1; k < rowOfNumbers.length; k++) {
-                example.append(" ").append(rowOfNumbers[k]);
-            }
-            taskQuestion = String.valueOf(example);
+            String[] rowOfNumbers = makeProgression(randomNumber1, randomStep,
+                    randomProgressionLength);
+
+            String answer = rowOfNumbers[hiddenMemberIndex];
+
+            rowOfNumbers[hiddenMemberIndex] = "..";
+
+            taskQuestion = String.join(" ", rowOfNumbers);
+            taskAnswer = answer;
 
             taskQuestionAnswer[i][0] = taskQuestion;
             taskQuestionAnswer[i][1] = taskAnswer;
@@ -39,9 +40,9 @@ public class Progression {
         Engine.engine(TASK, taskQuestionAnswer);
     }
 
-    public static String[] findRowOfNumbers(int randomNumber1,
-                                            int randomStep,
-                                            int randomRowLength) {
+    public static String[] makeProgression(int randomNumber1,
+                                           int randomStep,
+                                           int randomRowLength) {
         String[] rowOfNumbers = new String[randomRowLength];
         for (var j = 0; j < randomRowLength; j++) {
             int num = randomNumber1 + randomStep * j;

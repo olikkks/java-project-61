@@ -22,7 +22,7 @@ public class App {
                 3 - Calc\s
                 4 - GCD\s
                 5 - Progression\s
-                6 - Prim\s
+                6 - Prime\s
                 0 - Exit""");
         Scanner gameNumber = new Scanner(System.in);
         String gameNum = gameNumber.nextLine();

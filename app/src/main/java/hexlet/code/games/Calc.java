@@ -6,22 +6,22 @@ import static hexlet.code.Randoms.generateRandomNumber;
 
 public class Calc {
 
-    private final static String TASK = "What is the result of the expression?";
-    private final static String[] OPERATIONS = {"+", "-", "*"};
+    private static final String TASK = "What is the result of the expression?";
 
     public static void calculate() {
-
         String[][] taskQuestionAnswer = new String[Engine.ROUNDS][2];
-        String taskAnswer;
-        String taskQuestion;
 
         for (var i = 0; i < Engine.ROUNDS; i++) {
+            String taskAnswer;
+            String taskQuestion;
             int randomNumber1 = generateRandomNumber(1, 100);
             int randomNumber2 = generateRandomNumber(1, 10);
             int randomOperation = generateRandomNumber(0, 2);
+            char[] operations = {'+', '-', '*'};
+            char operator = operations[randomOperation];
 
-            taskQuestion = randomNumber1 + " " + OPERATIONS[randomOperation] + " " + randomNumber2;
-            taskAnswer = findCalc(randomNumber1, randomNumber2, randomOperation);
+            taskQuestion = randomNumber1 + " " + operator + " " + randomNumber2;
+            taskAnswer = String.valueOf(findCalc(randomNumber1, randomNumber2, operator));
 
             taskQuestionAnswer[i][0] = taskQuestion;
             taskQuestionAnswer[i][1] = taskAnswer;
@@ -29,21 +29,12 @@ public class Calc {
         Engine.engine(TASK, taskQuestionAnswer);
     }
 
-    public static String findCalc(int randomNumber1, int randomNumber2, int randomOperation) {
-        String findTaskAnswer = "";
-        switch (randomOperation) {
-            case 0:
-                findTaskAnswer = String.valueOf(randomNumber1 + randomNumber2);
-                break;
-            case 1:
-                findTaskAnswer = String.valueOf(randomNumber1 - randomNumber2);
-                break;
-            case 2:
-                findTaskAnswer = String.valueOf(randomNumber1 * randomNumber2);
-                break;
-            default:
-                break;
-        }
-        return findTaskAnswer;
+    private static int findCalc(int randomNumber1, int randomNumber2, char operator) {
+        return switch (operator) {
+            case '+' -> randomNumber1 + randomNumber2;
+            case '-' -> randomNumber1 - randomNumber2;
+            case '*' -> randomNumber1 * randomNumber2;
+            default -> throw new Error("Unknown operator:" + operator);
+        };
     }
 }

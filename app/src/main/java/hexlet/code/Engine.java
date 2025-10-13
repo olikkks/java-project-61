@@ -11,7 +11,7 @@ public class Engine {
         String clientsSolution;
         String selectedTaskQuestion;
         String selectedCorrectAnswer;
-        int i;
+        //int i;
 
         Logger logger = Logger.getLogger(Engine.class.getName());
         logger.info("Welcome to the Brain Games! \nMay I have your name?");
@@ -19,13 +19,14 @@ public class Engine {
         String name = s.nextLine();
         logger.info("Hello, " + name + "!");
         logger.info(task);
-        for (i = 0; i < taskQuestionAnswer.length; i++) {
-            selectedTaskQuestion = "Question: " + taskQuestionAnswer[i][0];
+        Scanner clientAnswer = new Scanner(System.in);
+        for (String[] questionAnswer : taskQuestionAnswer) {
+            selectedTaskQuestion = "Question: " + questionAnswer[0];
             logger.info(selectedTaskQuestion);
-            Scanner clientAnswer = new Scanner(System.in);
+
             clientsSolution = clientAnswer.nextLine();
             logger.info("Your answer: " + clientsSolution);
-            selectedCorrectAnswer = taskQuestionAnswer[i][1];
+            selectedCorrectAnswer = questionAnswer[1];
             if (clientsSolution.equals(selectedCorrectAnswer)) {
                 logger.info("Correct!");
             } else {
@@ -33,12 +34,10 @@ public class Engine {
                         + " is wrong answer ;(. Correct answer was "
                         + "'" + selectedCorrectAnswer + "'" + "." + "\n" + "Let's try again, "
                         + name + "!");
-                break;
+                return;
             }
         }
-        if (i == taskQuestionAnswer.length) {
-            logger.info("Congratulations, " + name + "!");
-        }
+        logger.info("Congratulations, " + name + "!");
     }
 }
 

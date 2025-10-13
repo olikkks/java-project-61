@@ -5,19 +5,16 @@ import hexlet.code.Engine;
 import static hexlet.code.Randoms.generateRandomNumber;
 
 public class GreatestComDivisor {
-    //    static Random random = new Random();
-    private final static String TASK = "Find the greatest common divisor of given numbers.";
-
+    private static final String TASK = "Find the greatest common divisor of given numbers.";
 
     public static void greatestComDivisor() {
-
         String[][] taskQuestionAnswer = new String[Engine.ROUNDS][2];
-        String taskAnswer;
-        String taskQuestion;
-        int dividend1;
-        int dividend2;
-
         for (var i = 0; i < Engine.ROUNDS; i++) {
+            String taskAnswer;
+            String taskQuestion;
+            int dividend1;
+            int dividend2;
+
             dividend1 = generateRandomNumber(1, 100);
             dividend2 = generateRandomNumber(1, 100);
 

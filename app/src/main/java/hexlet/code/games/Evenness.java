@@ -6,28 +6,25 @@ import static hexlet.code.Randoms.generateRandomNumber;
 
 public class Evenness {
 
-    private final static String TASK = "Answer 'yes' if the number is even, otherwise answer 'no'.";
-
+    private static final String TASK = "Answer 'yes' if the number is even, otherwise answer 'no'.";
 
     public static void evenness() {
-
         String[][] taskQuestionAnswer = new String[Engine.ROUNDS][2];
-        String taskAnswer;
-        String taskQuestion;
-
         for (var i = 0; i < Engine.ROUNDS; i++) {
+            String taskAnswer;
+            String taskQuestion;
             int taskNumber = generateRandomNumber(1, 100);
             taskQuestion = String.valueOf(taskNumber);
-            taskAnswer = findEvenness(taskNumber);
+            taskAnswer = isEven(taskNumber) ? "yes" : "no";
             taskQuestionAnswer[i][0] = taskQuestion;
             taskQuestionAnswer[i][1] = taskAnswer;
         }
         Engine.engine(TASK, taskQuestionAnswer);
     }
 
-    public static String findEvenness(int taskNumber) {
-        String findTaskAnswer;
-        findTaskAnswer = taskNumber % 2 == 0 ? "yes" : "no";
-        return findTaskAnswer;
+    public static boolean isEven(int taskNumber) {
+        boolean isEven;
+        isEven = taskNumber % 2 == 0;
+        return isEven;
     }
 }
