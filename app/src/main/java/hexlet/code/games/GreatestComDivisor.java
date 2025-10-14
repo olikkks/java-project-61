@@ -15,8 +15,8 @@ public class GreatestComDivisor {
             int dividend1;
             int dividend2;
 
-            dividend1 = generateRandomNumber(1, 100);
-            dividend2 = generateRandomNumber(1, 100);
+            dividend1 = generateRandomNumber(Engine.LOWLIMITRANDOMNUM, Engine.UPPERLIMITRANDOMNUM);
+            dividend2 = generateRandomNumber(Engine.LOWLIMITRANDOMNUM, Engine.UPPERLIMITRANDOMNUM);
 
             taskQuestion = dividend1 + " " + dividend2;
             taskAnswer = String.valueOf(findGreatestComDivisor(dividend1, dividend2));

@@ -13,7 +13,7 @@ public class Evenness {
         for (var i = 0; i < Engine.ROUNDS; i++) {
             String taskAnswer;
             String taskQuestion;
-            int taskNumber = generateRandomNumber(1, 100);
+            int taskNumber = generateRandomNumber(Engine.LOWLIMITRANDOMNUM, Engine.UPPERLIMITRANDOMNUM);
             taskQuestion = String.valueOf(taskNumber);
             taskAnswer = isEven(taskNumber) ? "yes" : "no";
             taskQuestionAnswer[i][0] = taskQuestion;

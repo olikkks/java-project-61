@@ -19,10 +19,10 @@ public class Progression {
 
         for (var i = 0; i < Engine.ROUNDS; i++) {
 
-            randomNumber1 = generateRandomNumber(1, 10);
-            randomStep = generateRandomNumber(1, 10);
-            randomProgressionLength = generateRandomNumber(5, 10);
-            hiddenMemberIndex = generateRandomNumber(1, randomProgressionLength - 1);
+            randomNumber1 = generateRandomNumber(Engine.LOWLIMITRANDOMNUM, Engine.SMALLUPPERLIMITRANDOMNUM);
+            randomStep = generateRandomNumber(Engine.LOWLIMITRANDOMNUM, Engine.SMALLUPPERLIMITRANDOMNUM);
+            randomProgressionLength = generateRandomNumber(Engine.PROGRLOWLIMITRANDOMLENGTH, Engine.PROGRUPPERLIMITRANDOMLENGTH);
+            hiddenMemberIndex = generateRandomNumber(Engine.LOWLIMITRANDOMNUM, randomProgressionLength - 1);
 
             String[] rowOfNumbers = makeProgression(randomNumber1, randomStep,
                     randomProgressionLength);

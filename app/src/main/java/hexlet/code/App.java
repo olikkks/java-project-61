@@ -52,7 +52,7 @@ public class App {
                 logger.info("Bye bye");
                 break;
             default:
-                logger.info("Unexpected number");
+                logger.info("Unknown user choice" + gameNum);
         }
     }
 }

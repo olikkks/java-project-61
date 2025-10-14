@@ -5,14 +5,14 @@ import java.util.logging.Logger;
 
 public class Engine {
     public static final int ROUNDS = 3;
+    public static final int LOWLIMITRANDOMNUM = 0;
+    public static final int UPPERLIMITRANDOMNUM = 100;
+    public static final int PROGRLOWLIMITRANDOMLENGTH = 5;
+    public static final int PROGRUPPERLIMITRANDOMLENGTH = 10;
+    public static final int SMALLUPPERLIMITRANDOMNUM = 10;
 
     public static void engine(String task, String[][] taskQuestionAnswer) {
-
-        String clientsSolution;
-        String selectedTaskQuestion;
-        String selectedCorrectAnswer;
-        //int i;
-
+        
         Logger logger = Logger.getLogger(Engine.class.getName());
         logger.info("Welcome to the Brain Games! \nMay I have your name?");
         Scanner s = new Scanner(System.in);
@@ -21,6 +21,9 @@ public class Engine {
         logger.info(task);
         Scanner clientAnswer = new Scanner(System.in);
         for (String[] questionAnswer : taskQuestionAnswer) {
+            String clientsSolution;
+            String selectedTaskQuestion;
+            String selectedCorrectAnswer;
             selectedTaskQuestion = "Question: " + questionAnswer[0];
             logger.info(selectedTaskQuestion);
 

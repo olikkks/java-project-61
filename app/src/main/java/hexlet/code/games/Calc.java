@@ -14,9 +14,9 @@ public class Calc {
         for (var i = 0; i < Engine.ROUNDS; i++) {
             String taskAnswer;
             String taskQuestion;
-            int randomNumber1 = generateRandomNumber(1, 100);
-            int randomNumber2 = generateRandomNumber(1, 10);
-            int randomOperation = generateRandomNumber(0, 2);
+            int randomNumber1 = generateRandomNumber(Engine.LOWLIMITRANDOMNUM, Engine.UPPERLIMITRANDOMNUM);
+            int randomNumber2 = generateRandomNumber(Engine.LOWLIMITRANDOMNUM, 10);
+            int randomOperation = generateRandomNumber(Engine.LOWLIMITRANDOMNUM, 2);
             char[] operations = {'+', '-', '*'};
             char operator = operations[randomOperation];
 

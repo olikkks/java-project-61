@@ -16,7 +16,7 @@ public class Prime {
             String taskAnswer;
             String taskQuestion;
             int randomNumber;
-            randomNumber = generateRandomNumber(1, 99);
+            randomNumber = generateRandomNumber(Engine.LOWLIMITRANDOMNUM, Engine.UPPERLIMITRANDOMNUM);
             taskQuestion = String.valueOf(randomNumber);
             taskAnswer = isPrime(randomNumber) ? "yes" : "no";
 
