@@ -6,7 +6,7 @@ import static hexlet.code.Randoms.generateRandomNumber;
 
 public class Prime {
 
-    private static final String TASK = "Answer 'yes' if the number is prime, otherwise answer 'no'.";
+    private static final String TASK = "Answer 'yes' if given number is prime, otherwise answer 'no'.";
 
     public static void prime() {
 
