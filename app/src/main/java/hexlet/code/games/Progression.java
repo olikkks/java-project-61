@@ -21,8 +21,8 @@ public class Progression {
             int hiddenMemberIndex = generateRandomNumber(lowLimitRandomNum, randomProgressionLength - 1);
 
             String[] rowOfNumbers = makeProgression(randomNumber1, randomStep, randomProgressionLength);
-            rowOfNumbers[hiddenMemberIndex] = "..";
             String taskAnswer = rowOfNumbers[hiddenMemberIndex];
+            rowOfNumbers[hiddenMemberIndex] = "..";
             String taskQuestion = String.join(" ", rowOfNumbers);
             taskQuestionAnswer[i][0] = taskQuestion;
             taskQuestionAnswer[i][1] = taskAnswer;
