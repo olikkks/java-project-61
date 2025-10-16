@@ -23,8 +23,6 @@ public class Even {
     }
 
     public static boolean isEven(int taskNumber) {
-        boolean isEven;
-        isEven = taskNumber % 2 == 0;
-        return isEven;
+        return taskNumber % 2 == 0;
     }
 }

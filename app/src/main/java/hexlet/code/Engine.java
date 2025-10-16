@@ -1,40 +1,33 @@
 package hexlet.code;
 
 import java.util.Scanner;
-import java.util.logging.Logger;
 
 public class Engine {
     public static final int ROUNDS = 3;
 
     public static void engine(String task, String[][] taskQuestionAnswer) {
-        Logger logger = Logger.getLogger(Engine.class.getName());
-        logger.info("Welcome to the Brain Games! \nMay I have your name?");
-        Scanner s = new Scanner(System.in);
-        String name = s.nextLine();
-        logger.info("Hello, " + name + "!");
-        logger.info(task);
-        Scanner clientAnswer = new Scanner(System.in);
+        System.out.println("Welcome to the Brain Games! \nMay I have your name?");
+        Scanner clientScanner = new Scanner(System.in);
+        String name = clientScanner.nextLine();
+        System.out.println("Hello, " + name + "!");
+        System.out.println(task);
         for (String[] questionAnswer : taskQuestionAnswer) {
-            String clientsSolution;
-            String selectedTaskQuestion;
-            String selectedCorrectAnswer;
-            selectedTaskQuestion = "Question: " + questionAnswer[0];
-            logger.info(selectedTaskQuestion);
-
-            clientsSolution = clientAnswer.nextLine();
-            logger.info("Your answer: " + clientsSolution);
-            selectedCorrectAnswer = questionAnswer[1];
+            String selectedTaskQuestion = "Question: " + questionAnswer[0];
+            System.out.println(selectedTaskQuestion);
+            String clientsSolution = clientScanner.nextLine();
+            System.out.println("Your answer: " + clientsSolution);
+            String selectedCorrectAnswer = questionAnswer[1];
             if (clientsSolution.equals(selectedCorrectAnswer)) {
-                logger.info("Correct!");
+                System.out.println("Correct!");
             } else {
-                logger.info("'" + clientsSolution + "'"
+                System.out.println("'" + clientsSolution + "'"
                         + " is wrong answer ;(. Correct answer was "
                         + "'" + selectedCorrectAnswer + "'" + "." + "\n" + "Let's try again, "
                         + name + "!");
                 return;
             }
         }
-        logger.info("Congratulations, " + name + "!");
+        System.out.println("Congratulations, " + name + "!");
     }
 }
 

@@ -13,11 +13,8 @@ public class GCD {
         final int upperLimitRandomNum = 100;
 
         for (var i = 0; i < Engine.ROUNDS; i++) {
-            int dividend1;
-            int dividend2;
-
-            dividend1 = generateRandomNumber(lowLimitRandomNum, upperLimitRandomNum);
-            dividend2 = generateRandomNumber(lowLimitRandomNum, upperLimitRandomNum);
+            int dividend1 = generateRandomNumber(lowLimitRandomNum, upperLimitRandomNum);
+            int dividend2 = generateRandomNumber(lowLimitRandomNum, upperLimitRandomNum);
 
             String taskQuestion = dividend1 + " " + dividend2;
             String taskAnswer = String.valueOf(findGreatestComDivisor(dividend1, dividend2));

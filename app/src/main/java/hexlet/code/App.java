@@ -1,7 +1,6 @@
 package hexlet.code;
 
 import java.util.Scanner;
-import java.util.logging.Logger;
 
 import hexlet.code.games.Calc;
 import hexlet.code.games.Even;
@@ -12,10 +11,8 @@ import hexlet.code.games.Progression;
 public class App {
 
     public static void main(String[] args) {
-        Logger logger = Logger.getLogger(App.class.getName());
-        LoggerConfig.init();
 
-        logger.info("""
+        System.out.println("""
                 Please enter the game number and press Enter.\s
                 1 - Greet\s
                 2 - Even\s
@@ -27,7 +24,7 @@ public class App {
         Scanner gameNumber = new Scanner(System.in);
         String gameNum = gameNumber.nextLine();
 
-        logger.info("Your choice: %s".formatted(gameNum));
+        System.out.println("Your choice: " + gameNum);
 
         switch (gameNum) {
             case "1":
@@ -49,10 +46,10 @@ public class App {
                 Prime.prime();
                 break;
             case "0":
-                logger.info("Bye bye");
+                System.out.println("Bye bye");
                 break;
             default:
-                logger.info("Unknown user choice" + gameNum);
+                System.out.println("Unknown user choice" + gameNum);
         }
     }
 }

@@ -15,8 +15,7 @@ public class Prime {
         final int upperLimitRandomNum = 100;
 
         for (var i = 0; i < Engine.ROUNDS; i++) {
-            int randomNumber;
-            randomNumber = generateRandomNumber(lowLimitRandomNum, upperLimitRandomNum);
+            int randomNumber = generateRandomNumber(lowLimitRandomNum, upperLimitRandomNum);
             String taskQuestion = String.valueOf(randomNumber);
             String taskAnswer = isPrime(randomNumber) ? "yes" : "no";
 
