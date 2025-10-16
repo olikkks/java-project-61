@@ -4,7 +4,7 @@ import hexlet.code.Engine;
 
 import static hexlet.code.Randoms.generateRandomNumber;
 
-public class Evenness {
+public class Even {
 
     private static final String TASK = "Answer 'yes' if the number is even, otherwise answer 'no'.";
 

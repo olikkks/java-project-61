@@ -4,8 +4,8 @@ import java.util.Scanner;
 import java.util.logging.Logger;
 
 import hexlet.code.games.Calc;
-import hexlet.code.games.Evenness;
-import hexlet.code.games.GreatestComDivisor;
+import hexlet.code.games.Even;
+import hexlet.code.games.GCD;
 import hexlet.code.games.Prime;
 import hexlet.code.games.Progression;
 
@@ -31,16 +31,16 @@ public class App {
 
         switch (gameNum) {
             case "1":
-                Cli.client();
+                Greet.client();
                 break;
             case "2":
-                Evenness.evenness();
+                Even.evenness();
                 break;
             case "3":
                 Calc.calculate();
                 break;
             case "4":
-                GreatestComDivisor.greatestComDivisor();
+                GCD.greatestComDivisor();
                 break;
             case "5":
                 Progression.progression();

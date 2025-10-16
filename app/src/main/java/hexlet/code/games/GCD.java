@@ -4,7 +4,7 @@ import hexlet.code.Engine;
 
 import static hexlet.code.Randoms.generateRandomNumber;
 
-public class GreatestComDivisor {
+public class GCD {
     private static final String TASK = "Find the greatest common divisor of given numbers.";
 
     public static void greatestComDivisor() {
