@@ -10,18 +10,22 @@ public class Calc {
 
     public static void calculate() {
         String[][] taskQuestionAnswer = new String[Engine.ROUNDS][2];
+        final int lowLimitRandomNum = 1;
+        final int upperLimitRandomNum = 100;
+        final int smallUpperLimitRandomNum = 10;
+        final int lowLimitOperation = 0;
+        final int upperLimitOperation = 2;
+
 
         for (var i = 0; i < Engine.ROUNDS; i++) {
-            String taskAnswer;
-            String taskQuestion;
-            int randomNumber1 = generateRandomNumber(Engine.LOWLIMITRANDOMNUM, Engine.UPPERLIMITRANDOMNUM);
-            int randomNumber2 = generateRandomNumber(Engine.LOWLIMITRANDOMNUM, 10);
-            int randomOperation = generateRandomNumber(Engine.LOWLIMITRANDOMNUM, 2);
+            int randomNumber1 = generateRandomNumber(lowLimitRandomNum, upperLimitRandomNum);
+            int randomNumber2 = generateRandomNumber(lowLimitRandomNum, smallUpperLimitRandomNum);
+            int randomOperation = generateRandomNumber(lowLimitOperation, upperLimitOperation);
             char[] operations = {'+', '-', '*'};
             char operator = operations[randomOperation];
 
-            taskQuestion = randomNumber1 + " " + operator + " " + randomNumber2;
-            taskAnswer = String.valueOf(findCalc(randomNumber1, randomNumber2, operator));
+            String taskQuestion = randomNumber1 + " " + operator + " " + randomNumber2;
+            String taskAnswer = String.valueOf(findCalc(randomNumber1, randomNumber2, operator));
 
             taskQuestionAnswer[i][0] = taskQuestion;
             taskQuestionAnswer[i][1] = taskAnswer;

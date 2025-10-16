@@ -11,14 +11,14 @@ public class Prime {
     public static void prime() {
 
         String[][] taskQuestionAnswer = new String[Engine.ROUNDS][2];
+        final int lowLimitRandomNum = 1;
+        final int upperLimitRandomNum = 100;
 
         for (var i = 0; i < Engine.ROUNDS; i++) {
-            String taskAnswer;
-            String taskQuestion;
             int randomNumber;
-            randomNumber = generateRandomNumber(Engine.LOWLIMITRANDOMNUM, Engine.UPPERLIMITRANDOMNUM);
-            taskQuestion = String.valueOf(randomNumber);
-            taskAnswer = isPrime(randomNumber) ? "yes" : "no";
+            randomNumber = generateRandomNumber(lowLimitRandomNum, upperLimitRandomNum);
+            String taskQuestion = String.valueOf(randomNumber);
+            String taskAnswer = isPrime(randomNumber) ? "yes" : "no";
 
             taskQuestionAnswer[i][0] = taskQuestion;
             taskQuestionAnswer[i][1] = taskAnswer;

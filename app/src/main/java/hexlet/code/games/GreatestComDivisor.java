@@ -9,17 +9,18 @@ public class GreatestComDivisor {
 
     public static void greatestComDivisor() {
         String[][] taskQuestionAnswer = new String[Engine.ROUNDS][2];
+        final int lowLimitRandomNum = 1;
+        final int upperLimitRandomNum = 100;
+
         for (var i = 0; i < Engine.ROUNDS; i++) {
-            String taskAnswer;
-            String taskQuestion;
             int dividend1;
             int dividend2;
 
-            dividend1 = generateRandomNumber(Engine.LOWLIMITRANDOMNUM, Engine.UPPERLIMITRANDOMNUM);
-            dividend2 = generateRandomNumber(Engine.LOWLIMITRANDOMNUM, Engine.UPPERLIMITRANDOMNUM);
+            dividend1 = generateRandomNumber(lowLimitRandomNum, upperLimitRandomNum);
+            dividend2 = generateRandomNumber(lowLimitRandomNum, upperLimitRandomNum);
 
-            taskQuestion = dividend1 + " " + dividend2;
-            taskAnswer = String.valueOf(findGreatestComDivisor(dividend1, dividend2));
+            String taskQuestion = dividend1 + " " + dividend2;
+            String taskAnswer = String.valueOf(findGreatestComDivisor(dividend1, dividend2));
 
             taskQuestionAnswer[i][0] = taskQuestion;
             taskQuestionAnswer[i][1] = taskAnswer;

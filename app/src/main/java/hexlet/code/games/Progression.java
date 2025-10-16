@@ -8,32 +8,22 @@ public class Progression {
     private static final String TASK = "What number is missing in the progression?";
 
     public static void progression() {
-
         String[][] taskQuestionAnswer = new String[Engine.ROUNDS][2];
-        String taskAnswer;
-        String taskQuestion;
-        int randomNumber1;
-        int randomStep;
-        int randomProgressionLength;
-        int hiddenMemberIndex;
+        final int lowLimitRandomNum = 1;
+        final int smallUpperLimitRandomNum = 10;
+        final int lowLimitLength = 5;
+        final int upperLimitLength = 10;
 
         for (var i = 0; i < Engine.ROUNDS; i++) {
+            int randomNumber1 = generateRandomNumber(lowLimitRandomNum, smallUpperLimitRandomNum);
+            int randomStep = generateRandomNumber(lowLimitRandomNum, smallUpperLimitRandomNum);
+            int randomProgressionLength = generateRandomNumber(lowLimitLength, upperLimitLength);
+            int hiddenMemberIndex = generateRandomNumber(lowLimitRandomNum, randomProgressionLength - 1);
 
-            randomNumber1 = generateRandomNumber(Engine.LOWLIMITRANDOMNUM, Engine.SMALLUPPERLIMITRANDOMNUM);
-            randomStep = generateRandomNumber(Engine.LOWLIMITRANDOMNUM, Engine.SMALLUPPERLIMITRANDOMNUM);
-            randomProgressionLength = generateRandomNumber(Engine.PROGRLOWLIMITRANDOMLENGTH, Engine.PROGRUPPERLIMITRANDOMLENGTH);
-            hiddenMemberIndex = generateRandomNumber(Engine.LOWLIMITRANDOMNUM, randomProgressionLength - 1);
-
-            String[] rowOfNumbers = makeProgression(randomNumber1, randomStep,
-                    randomProgressionLength);
-
-            String answer = rowOfNumbers[hiddenMemberIndex];
-
+            String[] rowOfNumbers = makeProgression(randomNumber1, randomStep, randomProgressionLength);
             rowOfNumbers[hiddenMemberIndex] = "..";
-
-            taskQuestion = String.join(" ", rowOfNumbers);
-            taskAnswer = answer;
-
+            String taskAnswer = rowOfNumbers[hiddenMemberIndex];
+            String taskQuestion = String.join(" ", rowOfNumbers);
             taskQuestionAnswer[i][0] = taskQuestion;
             taskQuestionAnswer[i][1] = taskAnswer;
         }

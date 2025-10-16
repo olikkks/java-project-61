@@ -10,12 +10,12 @@ public class Evenness {
 
     public static void evenness() {
         String[][] taskQuestionAnswer = new String[Engine.ROUNDS][2];
+        final int lowLimitRandomNum = 1;
+        final int upperLimitRandomNum = 100;
         for (var i = 0; i < Engine.ROUNDS; i++) {
-            String taskAnswer;
-            String taskQuestion;
-            int taskNumber = generateRandomNumber(Engine.LOWLIMITRANDOMNUM, Engine.UPPERLIMITRANDOMNUM);
-            taskQuestion = String.valueOf(taskNumber);
-            taskAnswer = isEven(taskNumber) ? "yes" : "no";
+            int taskNumber = generateRandomNumber(lowLimitRandomNum, upperLimitRandomNum);
+            String taskQuestion = String.valueOf(taskNumber);
+            String taskAnswer = isEven(taskNumber) ? "yes" : "no";
             taskQuestionAnswer[i][0] = taskQuestion;
             taskQuestionAnswer[i][1] = taskAnswer;
         }
