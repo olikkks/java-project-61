@@ -2,7 +2,7 @@ plugins {
     application
     distribution
     checkstyle
-    id("org.sonarqube") version "6.0.1.5171"
+    id("org.sonarqube") version "7.0.0.6105"
 //    id("java")
 }
 
@@ -31,7 +31,9 @@ sonar {
     properties {
         property("sonar.projectKey", "olikkks_java-project-61")
         property("sonar.organization", "olikkks")
-        property("sonar.host.url", "https://sonarcloud.io")
+//        property("sonar.projectKey", "olikkks_java-project-61")
+//        property("sonar.organization", "olikkks")
+//        property("sonar.host.url", "https://sonarcloud.io")
     }
 }
 
